@@ -30,11 +30,11 @@ public class Drawing {
      */
     public void draw(String format, String filename) {
         // TODO: Do you notice any issues here?
-        if (format.equals("jpeg")) {
+        if (format.equals("jpeg")) { // instanceOf
             try (Writer writer = new JPEGWriter(filename + ".jpeg")) {
                 for (Shape shape : this.shapes) {
                     // TODO: What is the issue of the behavior here?
-                    Line[] lines = shape.toLines();
+                    Line[] lines = shape.toLines(); // middle man
                     shape.draw(writer, lines);
                 }
             } catch (IOException e) {

@@ -27,7 +27,7 @@ public interface Shape {
         try {
             for (Line line : lines) {
                 // TODO: what is the purpose of the code there?
-                if (writer instanceof JPEGWriter) {
+                if (writer instanceof JPEGWriter) { // should just call writer instead
                     writer.write(line.toJPEG());
                 } else if (writer instanceof PNGWriter) {
                     writer.write(line.toPNG());
